@@ -1,3 +1,6 @@
+#ifndef FULLADDER_H_
+#define FULLADDER_H_
+
 #include "halfadder.h"
 #include "oder.h"
 
@@ -28,3 +31,5 @@ SC_MODULE(fulladder)
 		or1.Res(Carry_Out);
 	}
 };
+
+#endif

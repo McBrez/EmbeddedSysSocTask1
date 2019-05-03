@@ -1,4 +1,4 @@
-adder_tb.d: ../adder_tb.cpp /usr/local/systemc-2.3.2/include/systemc.h \
+adder_tb.o: ../adder_tb.cpp /usr/local/systemc-2.3.2/include/systemc.h \
  /usr/local/systemc-2.3.2/include/systemc \
  /usr/local/systemc-2.3.2/include/sysc/kernel/sc_cmnhdr.h \
  /usr/local/systemc-2.3.2/include/sysc/kernel/sc_externs.h \
@@ -114,7 +114,7 @@ adder_tb.d: ../adder_tb.cpp /usr/local/systemc-2.3.2/include/systemc.h \
  /usr/local/systemc-2.3.2/include/sysc/packages/boost/utility/string_view_fwd.hpp \
  /usr/local/systemc-2.3.2/include/sysc/utils/sc_vector.h \
  /usr/local/systemc-2.3.2/include/sysc/packages/boost/utility/enable_if.hpp \
- ../fulladder.cpp ../halfadder.cpp ../oder.cpp
+ ../fulladder.h ../halfadder.h ../oder.h
 
 /usr/local/systemc-2.3.2/include/systemc.h:
 
@@ -348,8 +348,8 @@ adder_tb.d: ../adder_tb.cpp /usr/local/systemc-2.3.2/include/systemc.h \
 
 /usr/local/systemc-2.3.2/include/sysc/packages/boost/utility/enable_if.hpp:
 
-../fulladder.cpp:
+../fulladder.h:
 
-../halfadder.cpp:
+../halfadder.h:
 
-../oder.cpp:
+../oder.h:

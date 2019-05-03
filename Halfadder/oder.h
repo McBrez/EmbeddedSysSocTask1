@@ -1,3 +1,7 @@
+#ifndef ODER_H_
+#define ODER_H_
+
+
 #include "systemc.h"
 
 SC_MODULE(oder)							// declaration of the sc_module oder
@@ -13,3 +17,5 @@ SC_MODULE(oder)							// declaration of the sc_module oder
 		sensitive << X << Y;			// sensitivity list
 	}
 };
+
+#endif
