@@ -43,7 +43,7 @@ all: Halfadder
 Halfadder: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: GCC C++ Linker'
-	g++ -L/usr/local/systemc-2.3.2/lib-linux64 -o"Halfadder" $(OBJS) $(USER_OBJS) $(LIBS)
+	g++ -L/usr/local/systemc-2.3.2/lib-linux64 -o "Halfadder" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -53,6 +53,5 @@ clean:
 	-@echo ' '
 
 .PHONY: all clean dependents
-.SECONDARY:
 
 -include ../makefile.targets

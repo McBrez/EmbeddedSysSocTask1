@@ -1,15 +1,12 @@
-05:34:45 **** Incremental Build of configuration NEW for project GreyScale_channel ****
+09:20:11 **** Incremental Build of configuration SetUpConfig for project Halfadder ****
 make all 
-Building file: ../GreyScale.cpp
+Building file: ../adder_tb.cpp
 Invoking: GCC C++ Compiler
-g++ -I/usr/local/systemc-2.3.2/include -O0 -g3 -Wall -c -fmessage-length=0 -fpermissive -MMD -MP -MF"GreyScale.d" -MT"GreyScale.o" -o "GreyScale.o" "../GreyScale.cpp"
-Finished building: ../GreyScale.cpp
+g++ -I/usr/local/systemc-2.3.2/include -O0 -g3 -Wall -c -fmessage-length=0 -fpermissive -MMD -MP -MF"adder_tb.d" -MT"adder_tb.o" -o "adder_tb.o" "../adder_tb.cpp"
+Finished building: ../adder_tb.cpp
  
-Building target: GreyScale_channel
+Building target: Halfadder
 Invoking: GCC C++ Linker
-g++ -L/usr/local/systemc-2.3.2/lib-linux64 -o "GreyScale_channel"  ./EasyBMP.o ./GreyScale.o ./GreyScale_tb.o ./PixelStack.o   -lsystemc
-Finished building target: GreyScale_channel
+g++ -L/usr/local/systemc-2.3.2/lib-linux64 -o "Halfadder"  ./adder_tb.o ./fulladder.o ./halfadder.o ./oder.o   -lsystemc
+Finished building target: Halfadder
  
-05:34:49 **** Incremental Build of configuration NEW for project GreyScale_channel ****
-make all 
-make: Nothing to be done for 'all'.
