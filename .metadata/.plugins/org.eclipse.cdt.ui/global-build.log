@@ -1,15 +1,15 @@
-16:43:33 **** Incremental Build of configuration NEW for project GreyScale ****
+05:34:45 **** Incremental Build of configuration NEW for project GreyScale_channel ****
 make all 
-Building file: ../GreyScale_tb.cpp
+Building file: ../GreyScale.cpp
 Invoking: GCC C++ Compiler
-g++ -I/usr/local/systemc-2.3.2/include -O0 -g3 -Wall -c -fmessage-length=0 -fpermissive -MMD -MP -MF"GreyScale_tb.d" -MT"GreyScale_tb.o" -o "GreyScale_tb.o" "../GreyScale_tb.cpp"
-Finished building: ../GreyScale_tb.cpp
+g++ -I/usr/local/systemc-2.3.2/include -O0 -g3 -Wall -c -fmessage-length=0 -fpermissive -MMD -MP -MF"GreyScale.d" -MT"GreyScale.o" -o "GreyScale.o" "../GreyScale.cpp"
+Finished building: ../GreyScale.cpp
  
-Building target: GreyScale
+Building target: GreyScale_channel
 Invoking: GCC C++ Linker
-g++ -L/usr/local/systemc-2.3.2/lib-linux64 -o "GreyScale"  ./EasyBMP.o ./GreyScale.o ./GreyScale_tb.o   -lsystemc
-Finished building target: GreyScale
+g++ -L/usr/local/systemc-2.3.2/lib-linux64 -o "GreyScale_channel"  ./EasyBMP.o ./GreyScale.o ./GreyScale_tb.o ./PixelStack.o   -lsystemc
+Finished building target: GreyScale_channel
  
-16:43:39 **** Incremental Build of configuration NEW for project GreyScale ****
+05:34:49 **** Incremental Build of configuration NEW for project GreyScale_channel ****
 make all 
 make: Nothing to be done for 'all'.
