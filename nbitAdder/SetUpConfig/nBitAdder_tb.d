@@ -115,7 +115,7 @@ nBitAdder_tb.d: ../nBitAdder_tb.cpp \
  /usr/local/systemc-2.3.2/include/sysc/packages/boost/utility/string_view_fwd.hpp \
  /usr/local/systemc-2.3.2/include/sysc/utils/sc_vector.h \
  /usr/local/systemc-2.3.2/include/sysc/packages/boost/utility/enable_if.hpp \
- ../nBitAdder.cpp ../fulladder.cpp ../halfadder.cpp ../oder.cpp
+ ../nBitAdder.h ../fulladder.h ../halfadder.h ../oder.h
 
 /usr/local/systemc-2.3.2/include/systemc.h:
 
@@ -349,10 +349,10 @@ nBitAdder_tb.d: ../nBitAdder_tb.cpp \
 
 /usr/local/systemc-2.3.2/include/sysc/packages/boost/utility/enable_if.hpp:
 
-../nBitAdder.cpp:
+../nBitAdder.h:
 
-../fulladder.cpp:
+../fulladder.h:
 
-../halfadder.cpp:
+../halfadder.h:
 
-../oder.cpp:
+../oder.h:
