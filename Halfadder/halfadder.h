@@ -1,7 +1,9 @@
+#ifndef HALFADDER_H_
+#define HALFADDER_H_
+
 #include "systemc.h"
 
-#ifndef HALFADDER_H
-#define HALFADDER_H
+
 
 SC_MODULE(halfadder){																	// declaration of the sc_module halfadder
 	sc_in<bool> X, Y;																	// input signal ports
