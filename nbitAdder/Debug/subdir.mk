@@ -4,24 +4,24 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
-../adder_tb.cpp \
 ../fulladder.cpp \
 ../halfadder.cpp \
 ../nBitAdder.cpp \
+../nBitAdder_tb.cpp \
 ../oder.cpp 
 
 OBJS += \
-./adder_tb.o \
 ./fulladder.o \
 ./halfadder.o \
 ./nBitAdder.o \
+./nBitAdder_tb.o \
 ./oder.o 
 
 CPP_DEPS += \
-./adder_tb.d \
 ./fulladder.d \
 ./halfadder.d \
 ./nBitAdder.d \
+./nBitAdder_tb.d \
 ./oder.d 
 
 

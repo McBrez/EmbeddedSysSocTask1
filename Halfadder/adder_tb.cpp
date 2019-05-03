@@ -1,5 +1,5 @@
 #include "systemc.h"
-#include "fulladder.cpp"
+#include "fulladder.h"
 
 int sc_main(int argc, char* argv[])
 {
@@ -28,7 +28,7 @@ int sc_main(int argc, char* argv[])
 	wfHadder->set_time_unit(1,SC_MS);
 	wfFadder->set_time_unit(1,SC_MS);
 
-	sc_trace(wfHadder, X, "X");										// Store the signals in the VCD files
+	sc_trace(wfHadder, X, "X");											// Store the signals in the VCD files
 	sc_trace(wfHadder, Y, "Y");
 	sc_trace(wfHadder, SumHadder, "SumHadder");
 	sc_trace(wfHadder, Carry_OutHadder, "Carry_OutHadder");
