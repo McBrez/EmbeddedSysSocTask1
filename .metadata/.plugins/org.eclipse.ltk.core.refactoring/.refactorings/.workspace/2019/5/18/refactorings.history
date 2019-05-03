@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;GreyScale/complex1.sc.cpp&apos;" deleteContents="false" description="Delete resource &apos;GreyScale/complex1.sc.cpp&apos;" element1="/GreyScale/complex1.sc.cpp" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1556807258789"/>&#x0A;<refactoring comment="Delete resource &apos;GreyScale/complex1.sc.h&apos;" deleteContents="false" description="Delete resource &apos;GreyScale/complex1.sc.h&apos;" element1="/GreyScale/complex1.sc.h" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1556807269077"/>
+</session>

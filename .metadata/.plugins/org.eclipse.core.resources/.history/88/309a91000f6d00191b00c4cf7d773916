@@ -1,0 +1,36 @@
+#include "GreyScale.h"
+#include "cplxopsphasor.sc.h"
+
+void GreyScale::doGreyScale() {
+	complex<sc_uint<8> > R_cpx, G_cpx, B_cpx, Grey_cpx;
+	complex<sc_uint<8> > divisor;
+
+	divisor.set_real(3);
+	R_cpx.set_real(R.read());
+	G_cpx.set_real(G.read());
+	B_cpx.set_real(B.read());
+	Grey_cpx = (R_cpx + G_cpx + B_cpx) / divisor;
+	GreyScale::Grey.write( Grey_cpx.get_real() );
+}
+
+void GreyScale::doLookupTable() {
+	// Expand R,G,B from 8 to 10 bits
+	sc_uint<10> divisor = 3;
+
+	R_ex.write( R.read().to_uint() );
+	G_ex.write( G.read().to_uint() );
+	B_ex.write( B.read().to_uint() );
+
+	sum.write( R_ex.read() + G_ex.read() + B_ex.read() );
+
+	rem.write( sum.read() );
+	quot.write( 0 );
+
+	while( rem.read() >= divisor ) {
+		quot.read()++;
+		rem.write( rem.read() - divisor );
+	}
+
+
+	Grey.write(quot.read());
+}

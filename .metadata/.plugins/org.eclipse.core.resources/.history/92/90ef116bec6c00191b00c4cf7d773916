@@ -1,0 +1,14 @@
+#include "GreyScale.h"
+#include "cplxopsphasor.sc.h"
+
+void GreyScale::doGreyScale() {
+	complex<sc_uint<8> > R_cpx, G_cpx, B_cpx, Grey_cpx;
+	complex<sc_uint<8> > divisor;
+
+	divisor.set_real("11"); // equals 3
+	R_cpx.set_real(GreyScale::R);
+	G_cpx.set_real(GreyScale::G);
+	B_cpx.set_real(GreyScale::B);
+	Grey_cpx = (R_cpx + G_cpx + B_cpx) / divisor;
+	GreyScale::Grey.write( Grey_cpx.get_real() );
+}

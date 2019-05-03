@@ -1,0 +1,18 @@
+#include "systemc.h"
+#include "test.cpp"
+
+int sc_main(int argc, char* argv[])
+{
+  sc_signal<bool> ASig, BSig;
+
+  test TestModule("ATestModule");
+
+  TestModule.testIn(ASig);
+  TestModule.testOut(BSig);
+
+  ASig = 1;
+  sc_start();  // run forever
+
+  return 0;
+
+}

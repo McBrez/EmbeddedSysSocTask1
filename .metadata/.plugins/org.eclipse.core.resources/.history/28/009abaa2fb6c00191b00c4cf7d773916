@@ -1,0 +1,791 @@
+#include "GreyScale.h"
+#include "cplxopsphasor.sc.h"
+
+void GreyScale::doGreyScale() {
+	complex<sc_uint<8> > R_cpx, G_cpx, B_cpx, Grey_cpx;
+	complex<sc_uint<8> > divisor;
+
+	divisor.set_real(3);
+	R_cpx.set_real(R.read());
+	G_cpx.set_real(G.read());
+	B_cpx.set_real(B.read());
+	Grey_cpx = (R_cpx + G_cpx + B_cpx) / divisor;
+	GreyScale::Grey.write( Grey_cpx.get_real() );
+}
+
+void GreyScale::doLookupTable() {
+	sc_signal<sc_uint<10> > sum;
+
+	sum = static_cast<sc_uint<10> >(R) +
+		  static_cast<sc_uint<10> >(G) +
+		  static_cast<sc_uint<10> >(B);
+
+	if(sum >= 0 && sum < 3) {
+		Grey = 0;
+	}
+	else if(sum >= 3 && sum < 6) {
+		Grey = 1;
+	}
+	else if(sum >= 6 && sum < 9) {
+		Grey = 2;
+	}
+	else if(sum >= 9 && sum < 12) {
+		Grey = 3;
+	}
+	else if(sum >= 12 && sum < 15) {
+		Grey = 4;
+	}
+	else if(sum >= 15 && sum < 18) {
+		Grey = 5;
+	}
+	else if(sum >= 18 && sum < 21) {
+		Grey = 6;
+	}
+	else if(sum >= 21 && sum < 24) {
+		Grey = 7;
+	}
+	else if(sum >= 24 && sum < 27) {
+		Grey = 8;
+	}
+	else if(sum >= 27 && sum < 30) {
+		Grey = 9;
+	}
+	else if(sum >= 30 && sum < 33) {
+		Grey = 10;
+	}
+	else if(sum >= 33 && sum < 36) {
+		Grey = 11;
+	}
+	else if(sum >= 36 && sum < 39) {
+		Grey = 12;
+	}
+	else if(sum >= 39 && sum < 42) {
+		Grey = 13;
+	}
+	else if(sum >= 42 && sum < 45) {
+		Grey = 14;
+	}
+	else if(sum >= 45 && sum < 48) {
+		Grey = 15;
+	}
+	else if(sum >= 48 && sum < 51) {
+		Grey = 16;
+	}
+	else if(sum >= 51 && sum < 54) {
+		Grey = 17;
+	}
+	else if(sum >= 54 && sum < 57) {
+		Grey = 18;
+	}
+	else if(sum >= 57 && sum < 60) {
+		Grey = 19;
+	}
+	else if(sum >= 60 && sum < 63) {
+		Grey = 20;
+	}
+	else if(sum >= 63 && sum < 66) {
+		Grey = 21;
+	}
+	else if(sum >= 66 && sum < 69) {
+		Grey = 22;
+	}
+	else if(sum >= 69 && sum < 72) {
+		Grey = 23;
+	}
+	else if(sum >= 72 && sum < 75) {
+		Grey = 24;
+	}
+	else if(sum >= 75 && sum < 78) {
+		Grey = 25;
+	}
+	else if(sum >= 78 && sum < 81) {
+		Grey = 26;
+	}
+	else if(sum >= 81 && sum < 84) {
+		Grey = 27;
+	}
+	else if(sum >= 84 && sum < 87) {
+		Grey = 28;
+	}
+	else if(sum >= 87 && sum < 90) {
+		Grey = 29;
+	}
+	else if(sum >= 90 && sum < 93) {
+		Grey = 30;
+	}
+	else if(sum >= 93 && sum < 96) {
+		Grey = 31;
+	}
+	else if(sum >= 96 && sum < 99) {
+		Grey = 32;
+	}
+	else if(sum >= 99 && sum < 102) {
+		Grey = 33;
+	}
+	else if(sum >= 102 && sum < 105) {
+		Grey = 34;
+	}
+	else if(sum >= 105 && sum < 108) {
+		Grey = 35;
+	}
+	else if(sum >= 108 && sum < 111) {
+		Grey = 36;
+	}
+	else if(sum >= 111 && sum < 114) {
+		Grey = 37;
+	}
+	else if(sum >= 114 && sum < 117) {
+		Grey = 38;
+	}
+	else if(sum >= 117 && sum < 120) {
+		Grey = 39;
+	}
+	else if(sum >= 120 && sum < 123) {
+		Grey = 40;
+	}
+	else if(sum >= 123 && sum < 126) {
+		Grey = 41;
+	}
+	else if(sum >= 126 && sum < 129) {
+		Grey = 42;
+	}
+	else if(sum >= 129 && sum < 132) {
+		Grey = 43;
+	}
+	else if(sum >= 132 && sum < 135) {
+		Grey = 44;
+	}
+	else if(sum >= 135 && sum < 138) {
+		Grey = 45;
+	}
+	else if(sum >= 138 && sum < 141) {
+		Grey = 46;
+	}
+	else if(sum >= 141 && sum < 144) {
+		Grey = 47;
+	}
+	else if(sum >= 144 && sum < 147) {
+		Grey = 48;
+	}
+	else if(sum >= 147 && sum < 150) {
+		Grey = 49;
+	}
+	else if(sum >= 150 && sum < 153) {
+		Grey = 50;
+	}
+	else if(sum >= 153 && sum < 156) {
+		Grey = 51;
+	}
+	else if(sum >= 156 && sum < 159) {
+		Grey = 52;
+	}
+	else if(sum >= 159 && sum < 162) {
+		Grey = 53;
+	}
+	else if(sum >= 162 && sum < 165) {
+		Grey = 54;
+	}
+	else if(sum >= 165 && sum < 168) {
+		Grey = 55;
+	}
+	else if(sum >= 168 && sum < 171) {
+		Grey = 56;
+	}
+	else if(sum >= 171 && sum < 174) {
+		Grey = 57;
+	}
+	else if(sum >= 174 && sum < 177) {
+		Grey = 58;
+	}
+	else if(sum >= 177 && sum < 180) {
+		Grey = 59;
+	}
+	else if(sum >= 180 && sum < 183) {
+		Grey = 60;
+	}
+	else if(sum >= 183 && sum < 186) {
+		Grey = 61;
+	}
+	else if(sum >= 186 && sum < 189) {
+		Grey = 62;
+	}
+	else if(sum >= 189 && sum < 192) {
+		Grey = 63;
+	}
+	else if(sum >= 192 && sum < 195) {
+		Grey = 64;
+	}
+	else if(sum >= 195 && sum < 198) {
+		Grey = 65;
+	}
+	else if(sum >= 198 && sum < 201) {
+		Grey = 66;
+	}
+	else if(sum >= 201 && sum < 204) {
+		Grey = 67;
+	}
+	else if(sum >= 204 && sum < 207) {
+		Grey = 68;
+	}
+	else if(sum >= 207 && sum < 210) {
+		Grey = 69;
+	}
+	else if(sum >= 210 && sum < 213) {
+		Grey = 70;
+	}
+	else if(sum >= 213 && sum < 216) {
+		Grey = 71;
+	}
+	else if(sum >= 216 && sum < 219) {
+		Grey = 72;
+	}
+	else if(sum >= 219 && sum < 222) {
+		Grey = 73;
+	}
+	else if(sum >= 222 && sum < 225) {
+		Grey = 74;
+	}
+	else if(sum >= 225 && sum < 228) {
+		Grey = 75;
+	}
+	else if(sum >= 228 && sum < 231) {
+		Grey = 76;
+	}
+	else if(sum >= 231 && sum < 234) {
+		Grey = 77;
+	}
+	else if(sum >= 234 && sum < 237) {
+		Grey = 78;
+	}
+	else if(sum >= 237 && sum < 240) {
+		Grey = 79;
+	}
+	else if(sum >= 240 && sum < 243) {
+		Grey = 80;
+	}
+	else if(sum >= 243 && sum < 246) {
+		Grey = 81;
+	}
+	else if(sum >= 246 && sum < 249) {
+		Grey = 82;
+	}
+	else if(sum >= 249 && sum < 252) {
+		Grey = 83;
+	}
+	else if(sum >= 252 && sum < 255) {
+		Grey = 84;
+	}
+	else if(sum >= 255 && sum < 258) {
+		Grey = 85;
+	}
+	else if(sum >= 258 && sum < 261) {
+		Grey = 86;
+	}
+	else if(sum >= 261 && sum < 264) {
+		Grey = 87;
+	}
+	else if(sum >= 264 && sum < 267) {
+		Grey = 88;
+	}
+	else if(sum >= 267 && sum < 270) {
+		Grey = 89;
+	}
+	else if(sum >= 270 && sum < 273) {
+		Grey = 90;
+	}
+	else if(sum >= 273 && sum < 276) {
+		Grey = 91;
+	}
+	else if(sum >= 276 && sum < 279) {
+		Grey = 92;
+	}
+	else if(sum >= 279 && sum < 282) {
+		Grey = 93;
+	}
+	else if(sum >= 282 && sum < 285) {
+		Grey = 94;
+	}
+	else if(sum >= 285 && sum < 288) {
+		Grey = 95;
+	}
+	else if(sum >= 288 && sum < 291) {
+		Grey = 96;
+	}
+	else if(sum >= 291 && sum < 294) {
+		Grey = 97;
+	}
+	else if(sum >= 294 && sum < 297) {
+		Grey = 98;
+	}
+	else if(sum >= 297 && sum < 300) {
+		Grey = 99;
+	}
+	else if(sum >= 300 && sum < 303) {
+		Grey = 100;
+	}
+	else if(sum >= 303 && sum < 306) {
+		Grey = 101;
+	}
+	else if(sum >= 306 && sum < 309) {
+		Grey = 102;
+	}
+	else if(sum >= 309 && sum < 312) {
+		Grey = 103;
+	}
+	else if(sum >= 312 && sum < 315) {
+		Grey = 104;
+	}
+	else if(sum >= 315 && sum < 318) {
+		Grey = 105;
+	}
+	else if(sum >= 318 && sum < 321) {
+		Grey = 106;
+	}
+	else if(sum >= 321 && sum < 324) {
+		Grey = 107;
+	}
+	else if(sum >= 324 && sum < 327) {
+		Grey = 108;
+	}
+	else if(sum >= 327 && sum < 330) {
+		Grey = 109;
+	}
+	else if(sum >= 330 && sum < 333) {
+		Grey = 110;
+	}
+	else if(sum >= 333 && sum < 336) {
+		Grey = 111;
+	}
+	else if(sum >= 336 && sum < 339) {
+		Grey = 112;
+	}
+	else if(sum >= 339 && sum < 342) {
+		Grey = 113;
+	}
+	else if(sum >= 342 && sum < 345) {
+		Grey = 114;
+	}
+	else if(sum >= 345 && sum < 348) {
+		Grey = 115;
+	}
+	else if(sum >= 348 && sum < 351) {
+		Grey = 116;
+	}
+	else if(sum >= 351 && sum < 354) {
+		Grey = 117;
+	}
+	else if(sum >= 354 && sum < 357) {
+		Grey = 118;
+	}
+	else if(sum >= 357 && sum < 360) {
+		Grey = 119;
+	}
+	else if(sum >= 360 && sum < 363) {
+		Grey = 120;
+	}
+	else if(sum >= 363 && sum < 366) {
+		Grey = 121;
+	}
+	else if(sum >= 366 && sum < 369) {
+		Grey = 122;
+	}
+	else if(sum >= 369 && sum < 372) {
+		Grey = 123;
+	}
+	else if(sum >= 372 && sum < 375) {
+		Grey = 124;
+	}
+	else if(sum >= 375 && sum < 378) {
+		Grey = 125;
+	}
+	else if(sum >= 378 && sum < 381) {
+		Grey = 126;
+	}
+	else if(sum >= 381 && sum < 384) {
+		Grey = 127;
+	}
+	else if(sum >= 384 && sum < 387) {
+		Grey = 128;
+	}
+	else if(sum >= 387 && sum < 390) {
+		Grey = 129;
+	}
+	else if(sum >= 390 && sum < 393) {
+		Grey = 130;
+	}
+	else if(sum >= 393 && sum < 396) {
+		Grey = 131;
+	}
+	else if(sum >= 396 && sum < 399) {
+		Grey = 132;
+	}
+	else if(sum >= 399 && sum < 402) {
+		Grey = 133;
+	}
+	else if(sum >= 402 && sum < 405) {
+		Grey = 134;
+	}
+	else if(sum >= 405 && sum < 408) {
+		Grey = 135;
+	}
+	else if(sum >= 408 && sum < 411) {
+		Grey = 136;
+	}
+	else if(sum >= 411 && sum < 414) {
+		Grey = 137;
+	}
+	else if(sum >= 414 && sum < 417) {
+		Grey = 138;
+	}
+	else if(sum >= 417 && sum < 420) {
+		Grey = 139;
+	}
+	else if(sum >= 420 && sum < 423) {
+		Grey = 140;
+	}
+	else if(sum >= 423 && sum < 426) {
+		Grey = 141;
+	}
+	else if(sum >= 426 && sum < 429) {
+		Grey = 142;
+	}
+	else if(sum >= 429 && sum < 432) {
+		Grey = 143;
+	}
+	else if(sum >= 432 && sum < 435) {
+		Grey = 144;
+	}
+	else if(sum >= 435 && sum < 438) {
+		Grey = 145;
+	}
+	else if(sum >= 438 && sum < 441) {
+		Grey = 146;
+	}
+	else if(sum >= 441 && sum < 444) {
+		Grey = 147;
+	}
+	else if(sum >= 444 && sum < 447) {
+		Grey = 148;
+	}
+	else if(sum >= 447 && sum < 450) {
+		Grey = 149;
+	}
+	else if(sum >= 450 && sum < 453) {
+		Grey = 150;
+	}
+	else if(sum >= 453 && sum < 456) {
+		Grey = 151;
+	}
+	else if(sum >= 456 && sum < 459) {
+		Grey = 152;
+	}
+	else if(sum >= 459 && sum < 462) {
+		Grey = 153;
+	}
+	else if(sum >= 462 && sum < 465) {
+		Grey = 154;
+	}
+	else if(sum >= 465 && sum < 468) {
+		Grey = 155;
+	}
+	else if(sum >= 468 && sum < 471) {
+		Grey = 156;
+	}
+	else if(sum >= 471 && sum < 474) {
+		Grey = 157;
+	}
+	else if(sum >= 474 && sum < 477) {
+		Grey = 158;
+	}
+	else if(sum >= 477 && sum < 480) {
+		Grey = 159;
+	}
+	else if(sum >= 480 && sum < 483) {
+		Grey = 160;
+	}
+	else if(sum >= 483 && sum < 486) {
+		Grey = 161;
+	}
+	else if(sum >= 486 && sum < 489) {
+		Grey = 162;
+	}
+	else if(sum >= 489 && sum < 492) {
+		Grey = 163;
+	}
+	else if(sum >= 492 && sum < 495) {
+		Grey = 164;
+	}
+	else if(sum >= 495 && sum < 498) {
+		Grey = 165;
+	}
+	else if(sum >= 498 && sum < 501) {
+		Grey = 166;
+	}
+	else if(sum >= 501 && sum < 504) {
+		Grey = 167;
+	}
+	else if(sum >= 504 && sum < 507) {
+		Grey = 168;
+	}
+	else if(sum >= 507 && sum < 510) {
+		Grey = 169;
+	}
+	else if(sum >= 510 && sum < 513) {
+		Grey = 170;
+	}
+	else if(sum >= 513 && sum < 516) {
+		Grey = 171;
+	}
+	else if(sum >= 516 && sum < 519) {
+		Grey = 172;
+	}
+	else if(sum >= 519 && sum < 522) {
+		Grey = 173;
+	}
+	else if(sum >= 522 && sum < 525) {
+		Grey = 174;
+	}
+	else if(sum >= 525 && sum < 528) {
+		Grey = 175;
+	}
+	else if(sum >= 528 && sum < 531) {
+		Grey = 176;
+	}
+	else if(sum >= 531 && sum < 534) {
+		Grey = 177;
+	}
+	else if(sum >= 534 && sum < 537) {
+		Grey = 178;
+	}
+	else if(sum >= 537 && sum < 540) {
+		Grey = 179;
+	}
+	else if(sum >= 540 && sum < 543) {
+		Grey = 180;
+	}
+	else if(sum >= 543 && sum < 546) {
+		Grey = 181;
+	}
+	else if(sum >= 546 && sum < 549) {
+		Grey = 182;
+	}
+	else if(sum >= 549 && sum < 552) {
+		Grey = 183;
+	}
+	else if(sum >= 552 && sum < 555) {
+		Grey = 184;
+	}
+	else if(sum >= 555 && sum < 558) {
+		Grey = 185;
+	}
+	else if(sum >= 558 && sum < 561) {
+		Grey = 186;
+	}
+	else if(sum >= 561 && sum < 564) {
+		Grey = 187;
+	}
+	else if(sum >= 564 && sum < 567) {
+		Grey = 188;
+	}
+	else if(sum >= 567 && sum < 570) {
+		Grey = 189;
+	}
+	else if(sum >= 570 && sum < 573) {
+		Grey = 190;
+	}
+	else if(sum >= 573 && sum < 576) {
+		Grey = 191;
+	}
+	else if(sum >= 576 && sum < 579) {
+		Grey = 192;
+	}
+	else if(sum >= 579 && sum < 582) {
+		Grey = 193;
+	}
+	else if(sum >= 582 && sum < 585) {
+		Grey = 194;
+	}
+	else if(sum >= 585 && sum < 588) {
+		Grey = 195;
+	}
+	else if(sum >= 588 && sum < 591) {
+		Grey = 196;
+	}
+	else if(sum >= 591 && sum < 594) {
+		Grey = 197;
+	}
+	else if(sum >= 594 && sum < 597) {
+		Grey = 198;
+	}
+	else if(sum >= 597 && sum < 600) {
+		Grey = 199;
+	}
+	else if(sum >= 600 && sum < 603) {
+		Grey = 200;
+	}
+	else if(sum >= 603 && sum < 606) {
+		Grey = 201;
+	}
+	else if(sum >= 606 && sum < 609) {
+		Grey = 202;
+	}
+	else if(sum >= 609 && sum < 612) {
+		Grey = 203;
+	}
+	else if(sum >= 612 && sum < 615) {
+		Grey = 204;
+	}
+	else if(sum >= 615 && sum < 618) {
+		Grey = 205;
+	}
+	else if(sum >= 618 && sum < 621) {
+		Grey = 206;
+	}
+	else if(sum >= 621 && sum < 624) {
+		Grey = 207;
+	}
+	else if(sum >= 624 && sum < 627) {
+		Grey = 208;
+	}
+	else if(sum >= 627 && sum < 630) {
+		Grey = 209;
+	}
+	else if(sum >= 630 && sum < 633) {
+		Grey = 210;
+	}
+	else if(sum >= 633 && sum < 636) {
+		Grey = 211;
+	}
+	else if(sum >= 636 && sum < 639) {
+		Grey = 212;
+	}
+	else if(sum >= 639 && sum < 642) {
+		Grey = 213;
+	}
+	else if(sum >= 642 && sum < 645) {
+		Grey = 214;
+	}
+	else if(sum >= 645 && sum < 648) {
+		Grey = 215;
+	}
+	else if(sum >= 648 && sum < 651) {
+		Grey = 216;
+	}
+	else if(sum >= 651 && sum < 654) {
+		Grey = 217;
+	}
+	else if(sum >= 654 && sum < 657) {
+		Grey = 218;
+	}
+	else if(sum >= 657 && sum < 660) {
+		Grey = 219;
+	}
+	else if(sum >= 660 && sum < 663) {
+		Grey = 220;
+	}
+	else if(sum >= 663 && sum < 666) {
+		Grey = 221;
+	}
+	else if(sum >= 666 && sum < 669) {
+		Grey = 222;
+	}
+	else if(sum >= 669 && sum < 672) {
+		Grey = 223;
+	}
+	else if(sum >= 672 && sum < 675) {
+		Grey = 224;
+	}
+	else if(sum >= 675 && sum < 678) {
+		Grey = 225;
+	}
+	else if(sum >= 678 && sum < 681) {
+		Grey = 226;
+	}
+	else if(sum >= 681 && sum < 684) {
+		Grey = 227;
+	}
+	else if(sum >= 684 && sum < 687) {
+		Grey = 228;
+	}
+	else if(sum >= 687 && sum < 690) {
+		Grey = 229;
+	}
+	else if(sum >= 690 && sum < 693) {
+		Grey = 230;
+	}
+	else if(sum >= 693 && sum < 696) {
+		Grey = 231;
+	}
+	else if(sum >= 696 && sum < 699) {
+		Grey = 232;
+	}
+	else if(sum >= 699 && sum < 702) {
+		Grey = 233;
+	}
+	else if(sum >= 702 && sum < 705) {
+		Grey = 234;
+	}
+	else if(sum >= 705 && sum < 708) {
+		Grey = 235;
+	}
+	else if(sum >= 708 && sum < 711) {
+		Grey = 236;
+	}
+	else if(sum >= 711 && sum < 714) {
+		Grey = 237;
+	}
+	else if(sum >= 714 && sum < 717) {
+		Grey = 238;
+	}
+	else if(sum >= 717 && sum < 720) {
+		Grey = 239;
+	}
+	else if(sum >= 720 && sum < 723) {
+		Grey = 240;
+	}
+	else if(sum >= 723 && sum < 726) {
+		Grey = 241;
+	}
+	else if(sum >= 726 && sum < 729) {
+		Grey = 242;
+	}
+	else if(sum >= 729 && sum < 732) {
+		Grey = 243;
+	}
+	else if(sum >= 732 && sum < 735) {
+		Grey = 244;
+	}
+	else if(sum >= 735 && sum < 738) {
+		Grey = 245;
+	}
+	else if(sum >= 738 && sum < 741) {
+		Grey = 246;
+	}
+	else if(sum >= 741 && sum < 744) {
+		Grey = 247;
+	}
+	else if(sum >= 744 && sum < 747) {
+		Grey = 248;
+	}
+	else if(sum >= 747 && sum < 750) {
+		Grey = 249;
+	}
+	else if(sum >= 750 && sum < 753) {
+		Grey = 250;
+	}
+	else if(sum >= 753 && sum < 756) {
+		Grey = 251;
+	}
+	else if(sum >= 756 && sum < 759) {
+		Grey = 252;
+	}
+	else if(sum >= 759 && sum < 762) {
+		Grey = 253;
+	}
+	else if(sum >= 762 && sum < 765) {
+		Grey = 254;
+	}
+	else if(sum >= 765 && sum < 768) {
+		Grey = 255;
+	}
+}

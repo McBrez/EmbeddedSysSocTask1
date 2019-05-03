@@ -1,0 +1,17 @@
+#include "systemc.h"
+#include "cplxopsphasor.sc.h"
+
+SC_MODULE(GreyScale) {
+	sc_in< complex < sc_uint < 8 > > > R, G, B;
+	sc_out< complex < sc_uint < 8 > > > Grey;
+	sc_in<bool> Clk;
+	sc_out<bool> Ready;
+	sc_out<bool> Valid;
+
+	void do_something();
+
+	SC_CTOR(GreyScale) {
+		SC_METHOD(do_something);
+		sensitive << Clk;
+	}
+};

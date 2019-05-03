@@ -1,0 +1,21 @@
+#include "systemc.h"
+
+#include "GreyScale.h"
+
+int sc_main(int argc, char* argv[])
+{
+  sc_signal<bool> ASig, BSig;
+
+  test TestModule("ATestModule");
+
+  TestModule.testIn(ASig);
+  TestModule.testOut(BSig);
+
+  sc_trace_file *testTraceFile = sc_create_vcd_trace_file("testFile");
+  ASig = 1;
+  sc_start();  // run forever
+
+  sc_close_vcd_trace_file(testTraceFile);
+  return 0;
+
+}

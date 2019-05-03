@@ -1,0 +1,18 @@
+#include "systemc.h"
+#include "GreyScale.h"
+#include "cplxopsphasor.sc.h"
+
+int sc_main(int argc, char* argv[])
+{
+  sc_in< complex < sc_uint < 8 > > > R, G, B;
+
+  GreyScale DUT("DUT");
+
+  sc_trace_file *testTraceFile = sc_create_vcd_trace_file("testFile");
+
+  sc_start();  // run forever
+
+  sc_close_vcd_trace_file(testTraceFile);
+  return 0;
+
+}

@@ -1,0 +1,7 @@
+#Tue Apr 30 11:57:22 EDT 2019
+eclipse.preferences.version=1
+environment/project/cdt.managedbuild.config.gnu.exe.debug.2001343578.1356885594/LD_LIBRARY_PATH/delimiter=\:
+environment/project/cdt.managedbuild.config.gnu.exe.debug.2001343578.1356885594/LD_LIBRARY_PATH/operation=replace
+environment/project/cdt.managedbuild.config.gnu.exe.debug.2001343578.1356885594/LD_LIBRARY_PATH/value=/usr/local/systemc-2.3.2/lib-linux64
+environment/project/cdt.managedbuild.config.gnu.exe.debug.2001343578.1356885594/append=true
+environment/project/cdt.managedbuild.config.gnu.exe.debug.2001343578.1356885594/appendContributed=true

@@ -1,0 +1,6 @@
+16:43:39 **** Incremental Build of configuration NEW for project GreyScale ****
+make all 
+make: Nothing to be done for 'all'.
+
+16:43:39 Build Finished. 0 errors, 0 warnings. (took 168ms)
+

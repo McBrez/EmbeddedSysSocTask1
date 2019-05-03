@@ -1,0 +1,15 @@
+#include"systemc.h"
+
+SC_MODULE(test) {
+	sc_in<bool> testIn;
+	sc_out<bool> testOut;
+
+	void do_something() {
+		testOut.write( testIn.read() );
+	}
+
+	SC_CTOR(test) {
+		SC_METHOD(do_something);
+		sensitive << testIn;
+	}
+};

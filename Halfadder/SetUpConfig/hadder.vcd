@@ -1,0 +1,63 @@
+$date
+     Apr 30, 2019       14:33:27
+$end
+
+$version
+ SystemC 2.3.2-Accellera --- Mar 11 2019 09:33:27
+$end
+
+$timescale
+     1 ms
+$end
+
+$scope module SystemC $end
+$var wire    1  aaaaa  X       $end
+$var wire    1  aaaab  Y       $end
+$var wire    1  aaaac  SumHadder       $end
+$var wire    1  aaaad  Carry_OutHadder       $end
+$upscope $end
+$enddefinitions  $end
+
+$comment
+All initial values are dumped below at time 0 sec = 0 timescale units.
+$end
+
+$dumpvars
+0aaaaa
+0aaaab
+0aaaac
+0aaaad
+$end
+
+#200
+1aaaaa
+1aaaac
+
+#300
+0aaaaa
+1aaaab
+
+#400
+1aaaaa
+0aaaac
+1aaaad
+
+#500
+0aaaaa
+0aaaab
+0aaaad
+
+#600
+1aaaaa
+1aaaac
+
+#700
+0aaaaa
+1aaaab
+
+#800
+1aaaaa
+0aaaac
+1aaaad
+
+#900

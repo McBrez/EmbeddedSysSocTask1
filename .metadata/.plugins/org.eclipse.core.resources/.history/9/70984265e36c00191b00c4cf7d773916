@@ -1,0 +1,5 @@
+#include "GreyScale.h"
+
+void test::do_something() {
+	testOut.write( testIn.read() );
+}

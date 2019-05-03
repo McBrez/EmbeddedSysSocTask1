@@ -1,0 +1,6 @@
+#include "GreyScale.h"
+#include "cplxopsphasor.sc.h"
+
+void GreyScale::do_something() {
+	Grey.write( R.read() / G.read() );
+}

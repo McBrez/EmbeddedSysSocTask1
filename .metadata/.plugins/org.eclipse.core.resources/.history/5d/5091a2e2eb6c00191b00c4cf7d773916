@@ -1,0 +1,30 @@
+#include "systemc.h"
+#include "GreyScale.h"
+
+int sc_main(int argc, char* argv[]) {
+	sc_signal<sc_uint<8> > R_tb, G_tb, B_tb, Grey_tb;
+
+	GreyScale DUT("DUT");
+	DUT.R(R_tb);
+	DUT.G(G_tb);
+	DUT.B(B_tb);
+	DUT.Grey(Grey_tb);
+
+	sc_trace_file *pTraceFile = sc_create_vcd_trace_file("traceFile");
+	sc_trace(pTraceFile, R_tb, "R");
+	sc_trace(pTraceFile, G_tb, "G");
+	sc_trace(pTraceFile, B_tb, "B");
+	sc_trace(pTraceFile, Grey_tb, "Grey");
+
+
+	R_tb.write("00000001");
+	G_tb.write("00000001");
+	B_tb.write("00000001");
+
+	sc_start(100, SC_MS);
+
+	sc_close_vcd_trace_file(pTraceFile);
+	sc_stop();
+
+	return 0;
+}
